@@ -53,7 +53,7 @@
     // 通过javascript代码实现，用户名输入框绑定失去焦点的功能
     document.getElementById("username").onblur = function () {
         // 当用户失去焦点的时候，执行这个函数体，也就是发送Ajax请求
-        var username = this.value();
+        var username = this.value;
         // 1.创建 XMLHttpRequest 对象
         var xmlhttp;
         if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -72,8 +72,10 @@
                 // document.getElementById("myDiv").innerHTML = xmlhttp.responseText;  // 这句代码是数目意思
                 if(xmlhttp.responseText == "true"){
                     // 用户名存在，显示提示信息
+                    document.getElementById("username_err").style.display = ''
                 }else {
                     // 用户名不存在，清除提示信息
+                    document.getElementById("username_err").style.display = 'none'
                 }
             }
         }
