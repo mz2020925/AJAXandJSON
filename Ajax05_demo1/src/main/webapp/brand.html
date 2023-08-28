@@ -60,12 +60,38 @@
             method: "get",
             url: ""
         }).then(function (get_resp) {
+            // 获取数据
+            let brands = get_resp.data;
 
+            // 拼接表格的html字符串
+            let tableData =
+                "    <tr>\n" +
+                "        <th>序号</th>\n" +
+                "        <th>品牌名称</th>\n" +
+                "        <th>企业名称</th>\n" +
+                "        <th>排序</th>\n" +
+                "        <th>品牌介绍</th>\n" +
+                "        <th>状态</th>\n" +
+                "        <th>操作</th>\n" +
+                "    </tr>\n";
+            for (let i = 0; i < brands.length; i++) {
+                let brand = brands[i];
+
+                tableData+="<tr align=\"center\">\n" +
+                    "        <td>"+(i+1)+"</td>\n" +
+                    "        <td>"+brand.brandName+"</td>\n" +
+                    "        <td>"+brand.companyName+"</td>\n" +
+                    "        <td>"+brand.ordered+"</td>\n" +
+                    "        <td>"+brand.description+"</td>\n" +
+                    "        <td>"+brand.status+"</td>\n" +
+                    "        <td><a href=\"#\">修改</a> <a href=\"#\">删除</a></td>\n" +
+                    "    </tr>";
+            }
+
+            // 将上面拼接的字符串设置到上面brandTable中
+            document.getElementById("brandTable").innerHTML = tableData;
 
         })
-
-
-
 
 
     }
