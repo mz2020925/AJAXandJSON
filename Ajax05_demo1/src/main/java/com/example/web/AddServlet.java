@@ -10,7 +10,7 @@ import javax.servlet.annotation.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-@WebServlet("/addServlet")
+@WebServlet("/add-user")
 public class AddServlet extends HttpServlet {
 
     private BrandService brandService = new BrandService();

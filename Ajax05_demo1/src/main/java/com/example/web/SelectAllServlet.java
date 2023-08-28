@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/select-all")
+@WebServlet("/select-all-users")
 public class SelectAllServlet extends HttpServlet {
     private BrandService branService = new BrandService();
 

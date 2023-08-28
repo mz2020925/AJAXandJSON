@@ -58,7 +58,7 @@
         // 2.放松ajax请求
         axios({
             method: "get",
-            url: ""
+            url: "http://localhost:80/select-all-users"
         }).then(function (get_resp) {
             // 获取数据
             let brands = get_resp.data;
